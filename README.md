@@ -17,3 +17,7 @@ python cli.py
 # or GUI
 python gui_tkinter.py
 
+Screenshots
+GUI Example
+![GUI Example 1](screenshots/gui1.png)
+![GUI Example 2](screenshots/gui2.png)
