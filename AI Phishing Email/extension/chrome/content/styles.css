@@ -1,0 +1,53 @@
+/* AI Phishing Email Detector - Injected Styles */
+
+#phish-scan-btn {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 999999;
+  background: #1a73e8;
+  color: #fff;
+  border: none;
+  border-radius: 24px;
+  padding: 10px 20px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+  transition: background 0.2s, transform 0.1s;
+}
+#phish-scan-btn:hover { background: #1558b0; transform: translateY(-1px); }
+#phish-scan-btn:disabled { background: #aaa; cursor: not-allowed; transform: none; }
+
+.phish-banner {
+  margin: 8px 16px;
+  padding: 12px 16px;
+  border-radius: 8px;
+  font-family: Arial, sans-serif;
+  font-size: 13px;
+  z-index: 99998;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+.phish-danger { background: #fce8e6; border: 2px solid #d93025; color: #b31412; }
+.phish-safe   { background: #e6f4ea; border: 2px solid #34a853; color: #1e6b38; }
+
+.phish-banner-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 6px;
+}
+.phish-icon { font-size: 18px; }
+.phish-confidence { margin-left: auto; font-size: 12px; opacity: 0.8; }
+.phish-close {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  opacity: 0.6;
+  padding: 0 4px;
+}
+.phish-close:hover { opacity: 1; }
+.phish-explanation { margin: 4px 0; }
+.phish-indicators { margin: 6px 0 0 16px; padding: 0; }
+.phish-indicators li { margin-bottom: 3px; }

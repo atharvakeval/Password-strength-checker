@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Phishing Detector</title>
+  <style>
+    body { width: 320px; font-family: Arial, sans-serif; font-size: 13px; margin: 0; padding: 0; background: #f8f9fa; color: #202124; }
+    .header { background: #1a73e8; color: white; padding: 14px 16px; display: flex; align-items: center; gap: 10px; }
+    .header h1 { margin: 0; font-size: 15px; font-weight: 600; }
+    .status-section { padding: 14px 16px; border-bottom: 1px solid #e0e0e0; }
+    .status-row { display: flex; justify-content: space-between; margin-bottom: 6px; }
+    .badge { border-radius: 12px; padding: 2px 10px; font-size: 11px; font-weight: 600; }
+    .badge-ok { background: #e6f4ea; color: #1e6b38; }
+    .badge-warn { background: #fce8e6; color: #b31412; }
+    .badge-gray { background: #f1f3f4; color: #5f6368; }
+    #scan-btn { width: 100%; padding: 10px; background: #1a73e8; color: white; border: none; border-radius: 6px; font-size: 14px; font-weight: 600; cursor: pointer; margin: 14px 0 0 0; }
+    #scan-btn:hover { background: #1558b0; }
+    #scan-btn:disabled { background: #aaa; cursor: not-allowed; }
+    .result-box { margin: 12px 0 0 0; padding: 12px; border-radius: 8px; display: none; }
+    .result-danger { background: #fce8e6; border: 1px solid #d93025; }
+    .result-safe { background: #e6f4ea; border: 1px solid #34a853; }
+    .result-title { font-weight: 700; font-size: 14px; margin-bottom: 4px; }
+    .result-danger .result-title { color: #b31412; }
+    .result-safe .result-title { color: #1e6b38; }
+    .result-explanation { font-size: 12px; margin-bottom: 6px; }
+    .result-indicators { font-size: 12px; padding-left: 14px; margin: 0; }
+    .footer { padding: 10px 16px; font-size: 11px; color: #5f6368; border-top: 1px solid #e0e0e0; }
+    .content { padding: 0 16px 16px; }
+    .no-email-msg { color: #5f6368; font-size: 12px; margin-top: 10px; }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <span style="font-size:22px">🛡️</span>
+    <h1>AI Phishing Detector</h1>
+  </div>
+
+  <div class="content">
+    <div class="status-section">
+      <div class="status-row">
+        <span>Backend API</span>
+        <span id="api-status" class="badge badge-gray">Checking…</span>
+      </div>
+      <div class="status-row">
+        <span>Email detected</span>
+        <span id="email-status" class="badge badge-gray">—</span>
+      </div>
+    </div>
+
+    <button id="scan-btn" disabled>🔍 Scan Current Email</button>
+    <p id="no-email-msg" class="no-email-msg" style="display:none">Open an email in Gmail or Outlook to scan it.</p>
+
+    <div id="result-box" class="result-box">
+      <div id="result-title" class="result-title"></div>
+      <div id="result-explanation" class="result-explanation"></div>
+      <ul id="result-indicators" class="result-indicators"></ul>
+    </div>
+  </div>
+
+  <div class="footer">AI Phishing Email Detector v1.0</div>
+  <script src="popup.js"></script>
+</body>
+</html>
