@@ -20,6 +20,5 @@ Security
 Everything runs locally. The app never logs, stores, or sends your password.
 Screenshots
 Strong password
-![Strong](screenshots/strong.png)
 Very weak password
-![Weak](screenshots/weak.png)
+Both the screenshot is present in the screenshot folder 
